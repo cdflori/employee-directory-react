@@ -1,19 +1,10 @@
 import React from "react";
-import Main from "./components/Main";
-import Wrapper from "./components/Wrapper";
-import Header from "./components/Header";
+// import '../styles/Wrapper'
 
-import "./App.css";
-
-function App() {
-  return (
-    <div className="App">
-      <Wrapper>
-        <Header />
-        <Main />
-      </Wrapper>
-    </div>
-  );
+function Wrapper(props) {
+  return <main className='wrapper'>{props.children}</main>
 }
 
-export default App;
+export default Wrapper;
+
+
