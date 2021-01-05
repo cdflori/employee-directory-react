@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import UserTable from './UserTable';
+import table from './Table';
 import Nav from './Nav';
 import API from '../utils/API';
 
@@ -68,17 +68,17 @@ class UserData extends Component {
 
             if (a[heading] === undefined) {
                 return 1;
-             } else if (b[heading] === undefined) {
-                 return -1;
+            } else if (b[heading] === undefined) {
+                return -1;
 
-             } else if 
-                 (heading === 'name') {
+            } else if 
+                (heading === 'name') {
             //calling the localeCompare method to return the first reference number in the user heading array for descending order      
-                     return b[heading].first.localeCompare(a[heading].first);
-                 } else {
-                     return b[heading] - a[heading];
-                 }
-             }
+                    return b[heading].first.localeCompare(a[heading].first);
+                } else {
+                    return b[heading] - a[heading];
+                }
+            }
             }
             const sortedUsers = this.state.filteredUsers.sort(sortUser);
             this.setState({ filteredUsers: sortedUsers });
@@ -112,11 +112,11 @@ render() {
         <>
         <Nav handleSearchChange={this.handleSearchChange} />
         <div className='user-data'>
-            {/* <DataTable
+            { <table
                 headings={this.headings}
                 users={this.state.filteredUsers}
                 handleSort={this.handleSort}
-                /> */}
+                />}
         </div>
         </>
     )
@@ -124,3 +124,5 @@ render() {
 
 
 }
+
+export default UserData;
