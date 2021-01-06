@@ -1,8 +1,8 @@
 import React from 'react';
 // import '../styles/Table';
-import UserData from './UserData';
+// import UserData from './UserData';
 
-function table ({ headings, users, handleSort }) {
+function TableDisplay ({ headings, users, handleSort }) {
     return (
         <div className='table mt-5'>
             <table id='table' className='table'>
@@ -19,10 +19,10 @@ function table ({ headings, users, handleSort }) {
                         })}
                     </tr>
                 </header>
-                <UserData users={users} />        
+                {/* <UserData users={users} />         */}
             </table>
         </div>
     )
 }
 
-export default table;
+export default TableDisplay;

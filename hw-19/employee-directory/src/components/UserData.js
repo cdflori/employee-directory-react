@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import table from './Table';
 import Nav from './Nav';
 import API from '../utils/API';
+import TableDisplay from './Table';
 
 // import '../styles/UserData'
 
@@ -112,11 +112,11 @@ render() {
         <>
         <Nav handleSearchChange={this.handleSearchChange} />
         <div className='user-data'>
-            { <table
+             <TableDisplay
                 headings={this.headings}
                 users={this.state.filteredUsers}
                 handleSort={this.handleSort}
-                />}
+            />
         </div>
         </>
     )
