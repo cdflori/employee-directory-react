@@ -26,7 +26,7 @@ class UserData extends Component {
             width: '20%'
         },
         {
-            name: 'Image',
+            name: 'Picture',
             width: '10%'
         }
     ]
@@ -99,6 +99,7 @@ this.setState({ filteredUsers: list });
 
 componentDidMount() {
     API.getUsers().then(results => {
+        console.log(results)
         this.setState({
 
             users: results.data.results,
@@ -112,14 +113,14 @@ render() {
         <>
         <Nav handleSearchChange={this.handleSearchChange} />
         <div className='user-data'>
-             <TableDisplay
+            <TableDisplay
                 headings={this.headings}
                 users={this.state.filteredUsers}
                 handleSort={this.handleSort}
             />
         </div>
         </>
-    )
+    );
 }
 
 

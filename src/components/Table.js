@@ -1,12 +1,11 @@
 import React from 'react';
-// import '../styles/Table';
-// import UserData from './UserData';
 
-function TableDisplay ({ headings, users, handleSort }) {
+
+function TableDisplay ({ headings, handleSort, users }) {
     return (
         <div className='table mt-5'>
             <table id='table' className='table'>
-                <header>
+                <thead>
                     <tr>
                         {headings.map(({ name, width }) => {
                             return (
@@ -18,8 +17,22 @@ function TableDisplay ({ headings, users, handleSort }) {
                             )
                         })}
                     </tr>
-                </header>
-                {/* <UserData users={users} />         */}
+                </thead> 
+                <tbody>
+                    {users.map(user => {
+                        return (
+                            <tr>
+                                <th>{user.name !== undefined ? user.name.first : ""}</th> 
+                                <th>{user.phone}</th>
+                                <th>{user.email}</th>
+                                <th>
+                                    <img src={user.picture !== undefined ? user.picture.medium : ""}/>
+                                </th>
+
+                            </tr>
+                        )
+                    })}
+                </tbody>
             </table>
         </div>
     )
